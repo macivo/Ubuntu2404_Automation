@@ -8,7 +8,7 @@ Steps with information:
   - Minimal desktop installation
   - Keep it as minimal as possible; install only what is truly needed
   - VNC setup with Xfce desktop environment using tightvncserver for remote desktop access
-2. Configure Hostname and Static IP Address with Python
+2. Configure Hostname and Static IP Address with Python (run python with sudo-mode only)
 3. Set Up Test Environment with Ansible
 4. Install Docker with docker-compose and Enable SSH Communication Between Containers
 
