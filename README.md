@@ -1,6 +1,8 @@
 This repository demonstrates a method to automate the installation process for the lab computers in my company.
 For privacy and security reasons, some parts have been removed or modified.
 
+![Topology](https://github.com/user-attachments/assets/8441bc7a-ecab-4555-b615-0ce1d9ff8904)
+
 Steps with information:
 
 1. Offline Ubuntu Noble 24.04 Zero-Touch Installation with cloud-init
