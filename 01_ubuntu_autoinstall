@@ -1,0 +1,82 @@
+#cloud-config
+######################################################################################################
+# This cloud-init file for zero-touch installation of Ubuntu 22-24.4
+# @author Mac Müller 
+# Date: 03.June.2025
+# https://www.linkedin.com/in/mac-mueller/
+# https://github.com/macivo/
+######################################################################################################
+
+# See the autoinstall documentation at:
+# https://canonical-subiquity.readthedocs-hosted.com/en/latest/reference/autoinstall-reference.html
+
+autoinstall:
+  apt:
+    disable_components: []
+    fallback: offline-install
+    geoip: true
+    mirror-selection:
+      primary:
+      - country-mirror
+      - arches:
+        - amd64
+        - i386
+        uri: http://200.0.0.99/ubuntu/
+      - arches:
+        - s390x
+        - arm64
+        - armhf
+        - powerpc
+        - ppc64el
+        - riscv64
+        uri: http://200.0.0.99/ubuntu/
+    preserve_sources_list: false
+    security:
+    - arches:
+      - amd64
+      - i386
+      uri: http://200.0.0.99/ubuntu/
+    - arches:
+      - s390x
+      - arm64
+      - armhf
+      - powerpc
+      - ppc64el
+      - riscv64
+      uri: http://200.0.0.99/ubuntu/
+  codecs:
+    install: false
+  drivers:
+    install: false
+  identity:
+    hostname: hostXYZ
+    password: $6$2Ex/P3Xgna8CxMpn$FVGH7xx4nZfhl.TEST.zm49GK61lvrPf8EiiTYoqrpHtcoVhDj75qyvPKZ92RYEJe/HASH/
+    realname: Mac Autoinstall
+    username: mac
+  kernel:
+    package: linux-generic
+  keyboard:
+    layout: ch
+    toggle: null
+    variant: legacy
+  locale: en_US.UTF-8
+  network:
+    ethernets:
+      eno1:
+        dhcp4: true
+    version: 2
+  oem:
+    install: auto
+  source:
+    id: ubuntu-server
+    search_drivers: false
+  ssh:
+    allow-pw: true
+    authorized-keys: []
+    install-server: true
+  storage:
+    layout:
+      name: LVM
+  timezone: Europe/Zurich
+  updates: security
+  version: 1
