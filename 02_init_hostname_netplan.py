@@ -44,9 +44,9 @@ if __name__ == "__main__":
     # Write values to the netplan
 	netplan["network"]["ethernets"][get_active_interface()] = {}
 	if_main = netplan["network"]["ethernets"][get_active_interface()]
-	if_main["addresses"] = "[ "+ip+"/"+prefix +" ]"
-	if_main["routes"] = { "- to": "defalut", " via": ip_gateway }
-	if_main["nameservers"] = { "search": "[RSSLAB.local]", "addresses": ip_dns }
+	if_main["addresses"] = "["+ip+"/"+prefix +"]"
+	if_main["routes"] = { "- to": "default", "  via": ip_gateway }
+	if_main["nameservers"] = { "search": "[ DNS.local ]", "addresses": "[ "+ip_dns+" ]" }
 	
     # Writing to netplan-file
 	with open("/etc/netplan/50-cloud-init.yaml", "w") as outfile:
